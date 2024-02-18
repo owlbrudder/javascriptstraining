@@ -1,0 +1,19 @@
+li::marker {
+  color: whitesmoke;
+}
+.colors {
+  background: pink;
+  color: white;
+}
+.text {
+  font-size: 2rem;
+  letter-spacing: 1rem;
+}
+.red {
+  background: red;
+  color: white;
+}
+.blue {
+  background: blue;
+  color: white;
+}
