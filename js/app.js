@@ -527,3 +527,35 @@ delay(100).then(() => {
 
   console.log(result.children);
 });
+
+delay(100).then(() => {
+  const head2 = document.createElement("h2");
+  head2.innerText = "More dynamic dynamite";
+  console.log(head2);
+  document.body.prepend(head2);
+
+  const getback = document.querySelector("#head1");
+  getback.remove();
+
+  const getback2 = document.querySelector("#headers");
+  console.log(getback2);
+  const thishead = getback2.querySelectorAll("h2");
+  console.log(thishead);
+  const getback3 = thishead[1];
+  console.log(getback3);
+  getback2.removeChild(getback3);
+  console.log(thishead);
+});
+
+delay(100).then(() => {
+  const list = document.getElementById("mylist");
+  const div = document.getElementById("itemDiv");
+  const item = document.querySelector(".special");
+
+  console.log(div.textContent);
+  console.log(list.innerHTML);
+
+  const ol = document.createElement("ol");
+  ol.innerHTML = '<li id="item1">Nitem</li><li id="item2">Nuvver item</li>';
+  document.body.prepend(ol);
+});
