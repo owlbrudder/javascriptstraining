@@ -559,3 +559,98 @@ delay(100).then(() => {
   ol.innerHTML = '<li id="item1">Nitem</li><li id="item2">Nuvver item</li>';
   document.body.prepend(ol);
 });
+
+delay(100).then(() => {
+  const random = document.querySelector(".random");
+  console.log(random.style);
+  //can change styles individually
+  //random.style.backgroundColor = 'green';
+  //note in CSS it is background-color but in JS we must use camelcase
+
+  random.classList.add("title"); //use the css file setting
+});
+
+delay(100).then(() => {
+  //go eventing
+  const btn = document.querySelector("#dont-touch");
+  const woohoo = document.querySelector("#woohoo");
+
+  function changeColours(e) {
+    console.log(e.target);
+    this.innerHTML =
+      this.innerHTML == "Ooooh, <strong>nice!</strong>"
+        ? "Don't <strong>touch me</strong>"
+        : "Ooooh, <strong>nice!</strong>";
+
+    if (e.target.classList.contains("redbtn")) {
+      e.target.classList.toggle("redbtn");
+      e.target.classList.toggle("bluebtn");
+    } else if (e.target.classList.contains("bluebtn")) {
+      e.target.classList.toggle("bluebtn");
+      e.target.classList.toggle("redbtn");
+    } else {
+      e.target.classList.toggle("redbtn");
+    }
+  }
+
+  btn.addEventListener("click", changeColours);
+  woohoo.addEventListener("click", changeColours);
+
+  const headiv = document.querySelector("#events");
+  const myhead = headiv.querySelector("h2");
+  const mybtn = headiv.querySelector("#btn-play");
+  mybtn.addEventListener("click", function () {
+    console.log("That hurts!");
+  });
+  mybtn.addEventListener("mousedown", function () {
+    console.log("Under pressure ..");
+  });
+  mybtn.addEventListener("mouseup", function () {
+    console.log("Ahhh, the relief");
+  });
+  myhead.addEventListener("mouseenter", function () {
+    console.log("EEEEK! A mouse");
+    this.classList.toggle("red");
+  });
+
+  //if using arrow functions, 'this' keyword does not work the same
+  myhead.addEventListener("click", (event) => {
+    console.log(event.currentTarget);
+    console.log(this);
+    // this.classList.toggle("red"); <== won't work
+  });
+
+  myhead.addEventListener("mouseleave", function () {
+    console.log("Phew! A snake got it .. EEEEK! A snake");
+    myhead.classList.toggle("red");
+  });
+
+  const myinput = document.querySelector("#amount");
+  console.log(myinput);
+  myinput.addEventListener("keypress", function (e) {
+    console.log("Key pressed " + e.key);
+    console.log("Event type " + e.type);
+    console.log(e.currentTarget);
+  });
+  myinput.addEventListener("keyup", function (e) {
+    console.log("Key up " + e.key);
+  });
+  myinput.addEventListener("keydown", function (e) {
+    console.log("Key down " + e.key);
+  });
+
+  const link = document.querySelector("#link");
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+  });
+
+  const btns = document.querySelectorAll(".btn");
+  console.log(btns);
+  btns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      console.log(e.currentTarget);
+      e.currentTarget.style.color =
+        e.currentTarget.style.color == "black" ? "white" : "black";
+    });
+  });
+});

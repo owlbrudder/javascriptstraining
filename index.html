@@ -14,6 +14,22 @@
       <input type="text" name="amount" id="amount" />
       <button>Submit</button>
     </form>
+    <div id="events">
+      <h2>Eventing happens here</h2>
+      <p id="woohoo">woohoo an event happened - where'd it go?</p>
+      <button id="dont-touch" class="btn">
+        Don't <strong>touch me</strong>
+      </button>
+      <button id="btn-play" class="btn">Ouch</button>
+
+      <!-- This is inline javascript which works, but DON'T DO IT, DAVE -->
+      <p
+        class="blue"
+        onclick="this.classList.toggle('blue');this.classList.toggle('red')"
+      >
+        Old style
+      </p>
+    </div>
     <div id="itemDiv">
       <div id="headers">
         <h2 id="head1" class="red">First heading</h2>
@@ -23,13 +39,11 @@
       </div>
       <ul id="mylist">
         <li class="first" id="special">I am first</li>
-        <a href="first.html" id="link">random link</a>
         <li>I have no attributes</li>
       </ul>
     </div>
-    <div id="someDiv">
-      <h4 id="head4"></h4>
-    </div>
+    <div id="someDiv" class="random">I'm just a div looking for CSS</div>
+    <a href="#" id="link">random link</a>
     <script src="./js/app.js"></script>
   </body>
 </html>

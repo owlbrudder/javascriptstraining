@@ -13,7 +13,35 @@ li::marker {
   background: red;
   color: white;
 }
+.redbtn {
+  background: red;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+}
 .blue {
   background: blue;
   color: white;
+}
+.bluebtn {
+  background: blue;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+}
+.title {
+  background: wheat;
+  color: rgb(132, 115, 63);
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+.btn {
+  background: red;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+}
+a {
+  display: inline-block;
+  margin-top: 100vh;
 }
